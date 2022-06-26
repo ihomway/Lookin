@@ -16,9 +16,6 @@
 #import "NSString+Score.h"
 #import "LookinDashboardBlueprint.h"
 #import "LKPreferenceManager.h"
-@import AppCenter;
-@import AppCenterAnalytics;
-@import AppCenterCrashes;
 
 @interface AppDelegate ()
 
@@ -52,13 +49,6 @@
     if (!self.launchedToOpenFile) {
         [[LKNavigationManager sharedInstance] showLaunch];
     }
-    
-    [MSACAppCenter start:@"217d75fa-ecab-4eba-a0de-ef7d97fb134f" withServices:@[
-        [MSACAnalytics class],
-        [MSACCrashes class]
-    ]];
-    MSACAppCenter.enabled = LKPreferenceManager.mainManager.enableReport;
-    
 #ifdef DEBUG
     [self _runTests];
 #endif

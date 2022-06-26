@@ -28,8 +28,6 @@
 #import "LookinPreviewView.h"
 #import "LKHierarchyView.h"
 #import "LKPerformanceReporter.h"
-@import AppCenter;
-@import AppCenterAnalytics;
 
 @interface LKStaticWindowController () <NSToolbarDelegate>
 
@@ -417,8 +415,6 @@
             }
         }
     }];
-    
-    [MSACAnalytics trackEvent:@"Export Document"];
 }
 
 - (void)appMenuManagerDidSelectOpenInNewWindow {
@@ -427,9 +423,6 @@
     file.serverVersion = newHierarchyInfo.serverVersion;
     file.hierarchyInfo = newHierarchyInfo;
     [[LKNavigationManager sharedInstance] showReaderWithHierarchyFile:file title:nil];
-    
-    [MSACAnalytics trackEvent:@"Open New Window"];
-
 }
 
 - (void)appMenuManagerDidSelectFilter {
@@ -452,8 +445,6 @@
             [self.viewController showDelayReloadTipWithSeconds:seconds];
         }
     }];
-    
-    [MSACAnalytics trackEvent:@"Delay Reload"];
 }
 
 - (void)appMenuManagerDidSelectMethodTrace {

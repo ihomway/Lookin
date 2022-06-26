@@ -12,8 +12,6 @@
 #import "LKPreferenceManager.h"
 #import "LKColorIndicatorLayer.h"
 #import "LKUserActionManager.h"
-@import AppCenter;
-@import AppCenterAnalytics;
 
 @interface LKSelectColorItem : NSObject
 
